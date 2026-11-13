@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Capstone</title>
+</head>
+<body>
+  <h1>Welcome to my restaurant</h1>
+  <button onclick="order()">Order from the kitchen</button>
+  <p id="answer">No order yet.</p>
+
+  <script>
+    async function order() {
+      const res = await fetch("/api/hello");
+      const data = await res.json();
+      document.getElementById("answer").textContent = data.message;
+    }
+  </script>
+</body>
+</html>
